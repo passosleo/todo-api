@@ -18,7 +18,7 @@ class TasksController {
   };
 
   static getTaskById = (req: Request, res: Response) => {
-    const id: String = req.params.id;
+    const id: string = req.params.id;
 
     Task.findById(id, (err: CallbackError, task: ITask) => {
       if (err) {
@@ -46,7 +46,7 @@ class TasksController {
   };
 
   static updateTask = (req: Request, res: Response) => {
-    const id: String = req.params.id;
+    const id: string = req.params.id;
 
     Task.findByIdAndUpdate(id, { $set: req.body }, (err: CallbackError) => {
       if (!err) {
@@ -60,7 +60,7 @@ class TasksController {
   };
 
   static deleteTask = (req: Request, res: Response) => {
-    const id: String = req.params.id;
+    const id: string = req.params.id;
 
     Task.findByIdAndRemove(id, (err: CallbackError) => {
       if (!err) {

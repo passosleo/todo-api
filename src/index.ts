@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express, { Application } from "express";
 import db from "./config/dbConnect";
 import routes from "./routes/index";
@@ -10,11 +11,11 @@ db.once("open", () => {
 
 const app: Application = express();
 
-const port: Number | String = process.env.PORT || 6000;
-
 app.use(express.json());
 
 routes(app);
+
+const port: number | string = process.env.PORT ?? 6000;
 
 app.listen(port, () => {
   console.log(`Server initilized in http://localhost:${port}`);
