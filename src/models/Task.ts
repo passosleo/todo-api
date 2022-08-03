@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import { ITask } from "../types";
 
-const brandSchema = new Schema<ITask>(
+const taskSchema = new Schema<ITask>(
   {
     id: { type: String },
     name: { type: String, required: true },
@@ -13,6 +13,6 @@ const brandSchema = new Schema<ITask>(
   }
 );
 
-const Task = model<ITask>("tasks", brandSchema);
+const Task = model<ITask>("Task", taskSchema);
 
 export default Task;
