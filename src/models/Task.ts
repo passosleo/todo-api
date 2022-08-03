@@ -4,14 +4,12 @@ import { ITask } from "../types";
 const brandSchema = new Schema<ITask>(
   {
     id: { type: String },
-    title: { type: String, required: true },
-    description: { type: String, required: true },
-    done: { type: Boolean, default: false },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
+    name: { type: String, required: true },
+    done: { type: Boolean, default: false }
   },
   {
-    versionKey: false,
+    timestamps: true,
+    versionKey: false
   }
 );
 
